@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  php:
+    container_name: php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    command: symfony server:start --port=8000
+    ports:
+      - 8000:8000
+    networks:
+      - app-network
+
+  database:
+    container_name: database
+    image: postgres:13
+    environment:
+      POSTGRES_DB: symfony
+      POSTGRES_USER: symfony
+      POSTGRES_PASSWORD: symfony
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
