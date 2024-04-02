@@ -3,8 +3,9 @@ version: '3.8'
 services:
   php:
     container_name: php
+    user: "${UID}:${GID}"
     build:
-      context: ./docker/php
+      context: .
       dockerfile: Dockerfile
     volumes:
       - .:/app
