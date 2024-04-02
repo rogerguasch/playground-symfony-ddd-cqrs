@@ -1,5 +1,15 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+
+hello:
+  path: /hello
+  controller: App\Controller\HelloController::hello
+  methods: GET|HEAD
+
+bye:
+  path: /bye
+  controller: App\Controller\ByeController::bye
+  methods: GET|HEAD
