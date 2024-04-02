@@ -13,3 +13,6 @@ composer-install:
 clean-cache:
 	@rm -rf apps/*/*/var
 	@docker exec php bin/console cache:warmup
+
+deploy:
+	@serverless deploy
