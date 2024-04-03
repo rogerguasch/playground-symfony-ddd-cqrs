@@ -4,6 +4,11 @@ controllers:
     namespace: App\Controller
   type: attribute
 
+landing:
+  path: /
+  controller: App\Web\Landing\UI\Controller\LandingController
+  methods: GET|HEAD
+
 hello:
   path: /hello
   controller: App\Controller\HelloController::hello
